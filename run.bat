@@ -1,1 +1,1 @@
-gradlew assembleDebug checkstyle sonarqube
+gradlew assembleDebug checkstyle sonarqube --info
