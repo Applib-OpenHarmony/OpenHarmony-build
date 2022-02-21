@@ -1,4 +1,4 @@
-name: 'HarmonyOS-java'
+name: 'HarmonyOS-build'
 description: 'This Github action helps build and analyse HMOS libraries'
 branding:
   icon: award
@@ -7,14 +7,12 @@ runs:
   using: "composite"
   steps:
     - name: Build
-      uses: actions/checkout@v2
-      with:
-        repository: applibgroup/HarmonyOsSdk
-        path: SDK
       env:
-        OHOS_SDK_HOME: ${{ github.action_path }}/SDK
+        OHOS_SDK_HOME: ${{ github.action_path }}
       shell: cmd
       id: main
       working-directory: ${{ github.workspace }}
       run: |
+        xcopy ${{ github.action_path }}\config ${{ github.workspace }}\config\
+        xcopy ${{ github.action_path }}\config\local.properties ${{ github.workspace }}\
         ${{ github.action_path }}/run.bat
