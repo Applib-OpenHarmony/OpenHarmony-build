@@ -12,9 +12,9 @@ runs:
         path: SDK
     - name: Build
       env:
-        OHOS_SDK_HOME: ${{ github.workspace }}/SDK
+        OHOS_SDK_HOME: ${{ github.workspace }}\SDK
       shell: cmd
       id: main
       working-directory: ${{ github.workspace }}
       run: |
-        ${{ github.action_path }}/run.bat
+        ${{ github.action_path }}\run.bat
