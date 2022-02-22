@@ -17,5 +17,5 @@ runs:
       id: main
       working-directory: ${{ github.workspace }}
       run: |
-        ls  ${{ github.workspace }}\SDK
+        xcopy ${{ github.workspace }}\SDK\config ${{ github.workspace }}\config\
         ${{ github.action_path }}\run.bat
