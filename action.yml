@@ -17,4 +17,5 @@ runs:
       id: main
       working-directory: ${{ github.workspace }}
       run: |
+        ls  ${{ github.workspace }}\SDK
         ${{ github.action_path }}\run.bat
