@@ -1,4 +1,4 @@
 echo %LANG%
-IF "%LANG%"=="JAVA" REM do gradlew assembleDebug checkstyle sonarqube --info
-IF "%LANG%"=="JS" REM do echo "%LANG%
+IF "%LANG%"=="JAVA" gradlew assembleDebug checkstyle sonarqube --info
+IF "%LANG%"=="JS"  gradlew assembleDebug sonarqube --info
 IF "%LANG%"=="C" REM do "%LANG%
