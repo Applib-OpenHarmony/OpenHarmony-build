@@ -18,4 +18,5 @@ runs:
       working-directory: ${{ github.workspace }}
       run: |
         xcopy ${{ github.workspace }}\SDK\config ${{ github.workspace }}\config\
+        xcopy ${{ github.workspace }}\SDK\config\local.properties ${{ github.workspace }}\
         ${{ github.action_path }}\run.bat
