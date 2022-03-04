@@ -19,4 +19,4 @@ runs:
       run: |
         xcopy ${{ github.workspace }}\SDK\config ${{ github.workspace }}\config\
         xcopy ${{ github.workspace }}\SDK\config\local.properties ${{ github.workspace }}\
-        .\node_modules\.bin\eslint --no-eslintrc --ext .js,.jsx,.ts,.tsx entry -o report.html --debug 
+        gradlew assembleDebug --info
