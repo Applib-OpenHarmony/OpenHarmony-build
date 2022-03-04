@@ -19,4 +19,5 @@ runs:
       run: |
         xcopy ${{ github.workspace }}\SDK\config ${{ github.workspace }}\config\
         xcopy ${{ github.workspace }}\SDK\config\local.properties ${{ github.workspace }}\
-        gradlew assembleDebug --info
+        echo %LANG%
+        gradlew assembleDebug sonarqube --info
