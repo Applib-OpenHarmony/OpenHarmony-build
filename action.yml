@@ -15,7 +15,7 @@ runs:
       id: main
       working-directory: ${{ github.workspace }}
       run: |
-        xcopy ${{ github.workspace }}\SDK\config ${{ github.workspace }}\
+        xcopy ${{ github.workspace }}\SDK\config ${{ github.workspace }}\ /Y
         echo %LANG%
     
     - name: eslint
