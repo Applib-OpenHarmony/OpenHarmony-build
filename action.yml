@@ -19,9 +19,10 @@ runs:
         echo %LANG%
     - name: Run ESlint
       shell: cmd
-      run:|
+      run: |
         npm install eslint\
-        node_modules\.bin\eslint -c config\.eslintrc.json --format json entry --output-file result.json
+        .\node_modules\.bin\eslint -c config\.eslintrc.json --format json entry --output-file result.json
+        echo %LANG%
     - name: build
       env:
         OHOS_SDK_HOME: ${{ github.workspace }}\SDK
