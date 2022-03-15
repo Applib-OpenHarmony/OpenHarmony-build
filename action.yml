@@ -16,12 +16,7 @@ runs:
       working-directory: ${{ github.workspace }}
       run: |
         xcopy ${{ github.workspace }}\SDK\config ${{ github.workspace }}\config\
-        echo %LANG%
-    - name: Run ESlint
-      shell: cmd
-      run: eslint -c config\.eslintrc.json --format json entry --output-file result.json
-    - name: build
-      env:
-        OHOS_SDK_HOME: ${{ github.workspace }}\SDK
-      shell: cmd
-      run: gradlew assembleDebug sonarqube --info
+        echo %LANG%\
+        eslint -c config\.eslintrc.json --format json entry --output-file result.json\
+        echo %LANG%\
+        gradlew assembleDebug sonarqube --info
