@@ -21,7 +21,7 @@ runs:
       shell: cmd
       run:|
         npm install eslint\
-        .\node_modules\.bin\eslint -c config\.eslintrc.json --format json entry --output-file result.json
+        node_modules\.bin\eslint -c config\.eslintrc.json --format json entry --output-file result.json
     - name: build
       env:
         OHOS_SDK_HOME: ${{ github.workspace }}\SDK
