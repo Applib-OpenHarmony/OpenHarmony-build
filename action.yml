@@ -22,7 +22,7 @@ runs:
         echo %LANG%
     - name: Run ESlint
       shell: cmd
-      run: .\node_modules\.bin\eslint -c ${{ github.workspace }}\SDK\config\.eslintrc.js --format json entry --output-file result.json
+      run: .\node_modules\.bin\eslint -c ${{ github.workspace }}\SDK\config\.eslintrc.json --format json entry --output-file result.json
     - name: build
       shell: cmd
       run: gradlew assembleDebug sonarqube --info
