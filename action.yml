@@ -20,6 +20,8 @@ runs:
     - name: Run ESlint
       shell: cmd
       run: |
+        npm cache verify\
+        npm install -g create-react-app\
         npm install eslint\
         .\node_modules\.bin\eslint -c config\.eslintrc.json --format json entry --output-file result.json
         echo %LANG%
