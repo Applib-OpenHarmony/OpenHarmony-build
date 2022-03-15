@@ -25,7 +25,6 @@ runs:
     - name: Run ESlint
       shell: cmd
       run: .\node_modules\.bin\eslint -c ${{ github.workspace }}\SDK\config\.eslintrc.js --format json entry --output-file result.json
-      continue-on-error: true
     - name: build
       shell: cmd
       run: gradlew assembleDebug sonarqube --info
