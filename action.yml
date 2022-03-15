@@ -22,5 +22,6 @@ runs:
       shell: cmd
       run: eslint -c .eslintrc.json --format json entry --output-file result.json && exit 0   
     - name: build
+      if: always()
       shell: cmd
       run: gradlew assembleDebug sonarqube --info
