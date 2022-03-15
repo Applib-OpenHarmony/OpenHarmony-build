@@ -10,7 +10,7 @@ runs:
       with:
         repository: applibgroup/HarmonyOsSdk
         path: SDK
-    - name: Build
+    - name: Copy SDK
       env:
         OHOS_SDK_HOME: ${{ github.workspace }}\SDK
       shell: cmd
@@ -22,3 +22,8 @@ runs:
         echo %LANG%\
         .\node_modules\.bin\eslint -c ${{ github.workspace }}\SDK\config\.eslintrc.js --format json entry --output-file result.json
         gradlew assembleDebug sonarqube --info
+    - name: Run ESlint
+      run: .\node_modules\.bin\eslint -c ${{ github.workspace }}\SDK\config\.eslintrc.js --format json entry --output-file result.json
+      continue-on-error: true
+    - name: build
+      run: gradlew assembleDebug sonarqube --info
