@@ -19,9 +19,7 @@ runs:
       run: |
         xcopy ${{ github.workspace }}\SDK\config ${{ github.workspace }}\config\
         xcopy ${{ github.workspace }}\SDK\config\local.properties ${{ github.workspace }}\
-        echo %LANG%\
-        .\node_modules\.bin\eslint -c ${{ github.workspace }}\SDK\config\.eslintrc.js --format json entry --output-file result.json
-        gradlew assembleDebug sonarqube --info
+        echo %LANG%
     - name: Run ESlint
       shell: cmd
       run: .\node_modules\.bin\eslint -c ${{ github.workspace }}\SDK\config\.eslintrc.js --format json entry --output-file result.json
