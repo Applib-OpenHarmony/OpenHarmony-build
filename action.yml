@@ -20,7 +20,7 @@ runs:
     
     - name: eslint
       shell: cmd
-      run: eslint -c .eslintrc.json --format json entry --output-file result.json   
+      run: eslint -c .eslintrc.json --format json entry --output-file result.json && exit 0   
     - name: build
       shell: cmd
       run: gradlew assembleDebug sonarqube --info
