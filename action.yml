@@ -15,12 +15,12 @@ runs:
       id: main
       working-directory: ${{ github.workspace }}
       run: |
-        xcopy ${{ github.workspace }}\SDK\config ${{ github.workspace }}\config\
+        xcopy ${{ github.workspace }}\SDK\config ${{ github.workspace }}\
         echo %LANG%
     
     - name: eslint
       shell: cmd
-      run: eslint -c config\.eslintrc.js --format json . --output-file result.json 
+      run: eslint -c .eslintrc.json --format json entry --output-file result.json   
     - name: build
       shell: cmd
       run: gradlew assembleDebug sonarqube --info
