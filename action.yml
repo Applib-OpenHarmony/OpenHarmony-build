@@ -10,6 +10,16 @@ runs:
       with:
         repository: applibgroup/HarmonyOsSdk
         path: SDK
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+    - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+    - run: npm install
+    - run: npm install eslint
     - name: Copy SDK
       shell: cmd
       id: main
@@ -19,10 +29,7 @@ runs:
         echo %LANG%
     - name: Run ESlint
       shell: cmd
-      run: |
-        npm install\
-        npm install eslint\
-        .\node_modules\.bin\eslint -c config\.eslintrc.json --format json entry --output-file result.json
+      run: .\node_modules\.bin\eslint -c config\.eslintrc.json --format json entry --output-file result.json
         echo %LANG%
     - name: build
       env:
