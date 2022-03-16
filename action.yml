@@ -22,6 +22,8 @@ runs:
       shell: cmd
       run: eslint -c .eslintrc.json --format json entry --output-file result.json && exit 0   
     - name: build
+      env:
+        OHOS_SDK_HOME: ${{ github.workspace }}\SDK
       if: always()
       shell: cmd
       run: gradlew assembleDebug sonarqube --info
