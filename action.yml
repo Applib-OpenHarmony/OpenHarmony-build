@@ -23,7 +23,7 @@ runs:
       run: eslint -c .eslintrc.json --format json entry --output-file result.json && exit 0   
     - name: addplugin.bat
       shell: cmd
-      run: .\addplugin.bat  
+      run: ./addplugin.bat  
     - name: build
       env:
         OHOS_SDK_HOME: ${{ github.workspace }}\SDK
