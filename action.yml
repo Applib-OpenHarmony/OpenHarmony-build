@@ -21,7 +21,7 @@ runs:
     - name: eslint
       shell: cmd
       run: eslint -c .eslintrc.json --format json entry --output-file result.json && exit 0   
-    - name: addplugins.bat
+    - name: addplugin.bat
       shell: cmd
       run: .\addplugin.bat  
     - name: build
