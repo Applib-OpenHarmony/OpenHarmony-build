@@ -20,9 +20,12 @@ runs:
     
     - name: eslint
       shell: cmd
-      run: eslint -c .eslintrc.json --format json entry --output-file result.json && exit 0   
-    - name: addplugin.bat
+      run: eslint -c .eslintrc.json --format json entry --output-file result.json && exit 0 
+    - name: variable
       shell: cmd
+      run: echo$GITHUB_REPOSITORY  
+    - name: addplugin.bat
+      shell: cmd  
       run: ./addplugin.bat  
     - name: build
       env:
