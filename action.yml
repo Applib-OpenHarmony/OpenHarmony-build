@@ -23,7 +23,7 @@ runs:
       run: eslint -c .eslintrc.json --format json entry --output-file result.json && exit 0 
     - name: sonarqube
       shell: cmd
-      run: .\gradlew sonarqube   
+      run: .\gradlew sonarqube --stacktrace  
     - name: variable
       shell: cmd
       run: echo$GITHUB_REPOSITORY  
