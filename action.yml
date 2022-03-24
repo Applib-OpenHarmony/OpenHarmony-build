@@ -19,10 +19,10 @@ runs:
         echo %LANG%
     - name: variable
       shell: cmd
-      run: echo $GITHUB_REPOSITORY  
+      run: echo ${{ github.repository }}  
     - name: addplugin.bat
       shell: cmd  
-      run: ./addplugin.bat  
+      run: addplugin.bat  
     - name: build
       env:
         OHOS_SDK_HOME: ${{ github.workspace }}\SDK
