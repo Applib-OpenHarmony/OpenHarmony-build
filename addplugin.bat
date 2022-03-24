@@ -1,4 +1,5 @@
 @ECHO off
+echo %github.repository%
 echo %GITHUB_REPOSITORY%
 powershell -Command "(get-content build.gradle) -replace """"apply plugin: 'com.huawei.ohos.app'"""", """"$&`napply plugin: 'org.sonarqube'"""" | set-content build.gradle"
 powershell -Command "(get-content build.gradle) -replace """"classpath 'com.huawei.ohos:decctest:1.2.6.0'"""", """"$&`nclasspath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3'"""" | set-content build.gradle"
