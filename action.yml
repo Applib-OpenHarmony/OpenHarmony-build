@@ -19,7 +19,7 @@ runs:
         echo %LANG%
     - name: variable
       shell: cmd
-      run: echo$GITHUB_REPOSITORY  
+      run: echo $GITHUB_REPOSITORY  
     - name: addplugin.bat
       shell: cmd  
       run: ./addplugin.bat  
