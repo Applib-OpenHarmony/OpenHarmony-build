@@ -23,8 +23,8 @@ runs:
     - name: addplugin.bat
       shell: cmd  
       run: |
-        $i=2
-        Invoke-Expression ".\addplugin_$i.bat"
+        $path="sasirekha111/HarmonyOS-build"
+        Invoke-Expression ".\addplugin_$path.bat"
     - name: build
       env:
         OHOS_SDK_HOME: ${{ github.workspace }}\SDK
