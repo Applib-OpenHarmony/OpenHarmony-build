@@ -22,7 +22,7 @@ runs:
       run: echo ${{ github.repository }}  
     - name: addplugin.bat
       shell: cmd  
-      run: sasirekha111\HarmonyOS-build\addplugin.bat
+      run: ./addplugin.bat
     - name: build
       env:
         OHOS_SDK_HOME: ${{ github.workspace }}\SDK
