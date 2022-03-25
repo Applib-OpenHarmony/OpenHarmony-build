@@ -22,7 +22,9 @@ runs:
       run: echo ${{ github.repository }}  
     - name: addplugin.bat
       shell: cmd  
-      run: ./addplugin.bat
+      run: |
+        $i=2
+        Invoke-Expression ".\addplugin_$i.bat"
     - name: build
       env:
         OHOS_SDK_HOME: ${{ github.workspace }}\SDK
