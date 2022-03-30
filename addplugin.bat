@@ -7,7 +7,7 @@ powershell -Command "add-content build.gradle \" sonarqube {`r`n`tproperties {`r
 set findstr /m "%Lang%"=="java" build.gradle
 IF "%Lang%"=="java" (
 powershell -Command "(get-content build.gradle) -replace """"apply plugin: 'com.huawei.ohos.app'"""", """"$&`napply plugin: 'checkstyle'"""" | set-content build.gradle"
-powershell -Command "add-content build.gradle \" task checkstyle(type: Checkstyle) {`r`n`t showViolations = true `r`n`t configFile file ("`""config/checkstyle.xml"`"") `r`n`t source 'entry/src/main/java' `r`n`t source 'instalike/src/main/java' `r`n`t include '**/*.java' `r`n`t   // empty classpath `r`n`t classpath = files() `r`n`t}`r`n`t}   `r`n`t checkstyle {    `r`n`t toolVersion "`""8.43"`"" `r`n`t}\""
+powershell -Command "add-content build.gradle \" task checkstyle(type: Checkstyle) {`r`n`t showViolations = true `r`n`t configFile file ("`""config/checkstyle.xml"`"") `r`n`t source 'entry/src/main/java' `r`n`t source 'instalike/src/main/java' `r`n`t include '**/*.java' `r`n`t   // empty classpath `r`n`t classpath = files() `r`n`t}`r`n`t}   `r`n`t checkstyle {    `r`n`t toolVersion "`""8.43"`"" `r`n}\""
 
 )
 
