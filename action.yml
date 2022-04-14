@@ -17,10 +17,12 @@ runs:
       run: |
         xcopy ${{ github.workspace }}\SDK\config ${{ github.workspace }}\ /Y
         echo %LANG%
-    
-    - name: eslint
+    - name: variable
       shell: cmd
-      run: eslint -c .eslintrc.json --format json entry --output-file result.json && exit 0   
+      run: echo ${{ github.repository }}  
+    - name: addplugin.bat
+      shell: cmd
+      run: ${{ github.action_path }}\addplugin.bat
     - name: build
       env:
         OHOS_SDK_HOME: ${{ github.workspace }}\SDK
