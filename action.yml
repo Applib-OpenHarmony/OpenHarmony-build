@@ -17,15 +17,17 @@ runs:
       run: |
         xcopy ${{ github.workspace }}\SDK\config ${{ github.workspace }}\ /Y
         echo %LANG%
-    - name: variable
-      shell: cmd
-      run: echo ${{ github.repository }}  
-    - name: addplugin.bat
-      shell: cmd
-      run: ${{ github.action_path }}\addplugin.bat
+#    - name: variable
+#      shell: cmd
+#      run: echo ${{ github.repository }}  
+ #   - name: addplugin.bat
+ #     shell: cmd
+ #     run: ${{ github.action_path }}\addplugin.bat
     - name: build
       env:
         OHOS_SDK_HOME: ${{ github.workspace }}\SDK
       if: always()
       shell: cmd
-      run: gradlew assembleDebug sonarqube --info
+      run: | 
+        npm install --fetch-retry-mintimeout=10000 --fetch-retry-maxtimeout=15000 --fetch-retries=1 \
+        node node_modules/@ohos/hvigor/bin/hvigor.js --mode module assembleHap
