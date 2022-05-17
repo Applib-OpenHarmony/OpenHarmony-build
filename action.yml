@@ -29,8 +29,8 @@ runs:
       if: always()
       shell: cmd
       run: | 
-        echo %CD% \
-        cd ${{ github.workspace }} \
-        echo %CD% \
-        npm install --fetch-retry-mintimeout=10000 --fetch-retry-maxtimeout=15000 --fetch-retries=1 \
+        echo %CD%
+        cd ${{ github.workspace }}
+        echo %CD%
+        npm install --fetch-retry-mintimeout=10000 --fetch-retry-maxtimeout=15000 --fetch-retries=1 debug
         node node_modules/@ohos/hvigor/bin/hvigor.js --mode module assembleHap
