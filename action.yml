@@ -29,6 +29,8 @@ runs:
       if: always()
       shell: cmd
       run: | 
+        cd D:\a\Neumorphism_Smart_Watch\Neumorphism_Smart_Watch\SDK
+        dir
         echo %CD%
         cd ${{ github.workspace }}
         echo %CD%
