@@ -34,5 +34,7 @@ runs:
         echo %CD%
         cd ${{ github.workspace }}
         echo %CD%
+        echo %OHOS_SDK_HOME% >> local.properties
+        type local.properties
         npm install --fetch-retry-mintimeout=10000 --fetch-retry-maxtimeout=15000 --fetch-retries=1 debug
         node node_modules/@ohos/hvigor/bin/hvigor.js --mode module assembleHap
