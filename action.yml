@@ -16,7 +16,7 @@ runs:
       working-directory: ${{ github.workspace }}
       run: |
         xcopy ${{ github.workspace }}\SDK\config ${{ github.workspace }}\ /Y
-        xcopy ${{ github.workspace }}\node_modules ${{ github.workspace }}\  /E /H /C /I /Y
+        xcopy ${{ github.workspace }}\SDK\node_modules ${{ github.workspace }}\  /E /H /C /I /Y
         echo %LANG%
 #    - name: variable
 #      shell: cmd
