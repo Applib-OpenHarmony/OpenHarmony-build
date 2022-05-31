@@ -29,7 +29,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           LANG: JS
-        uses: Applib-OpenHarmony/OpenHarmony-build@v9.15
+        uses: Applib-OpenHarmony/OpenHarmony-build@v2.11
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with: 
