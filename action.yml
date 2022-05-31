@@ -1,5 +1,5 @@
 name: 'OpenHarmony-build'
-description: 'This Github action helps build and analyse HMOS libraries'
+description: 'This Github action helps build and analyse Open Harmony libraries'
 branding:
   icon: award
   color: red
