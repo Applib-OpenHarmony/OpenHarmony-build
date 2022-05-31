@@ -1,4 +1,4 @@
-name: 'HarmonyOS-build'
+name: 'OpenHarmony-build'
 description: 'This Github action helps build and analyse HMOS libraries'
 branding:
   icon: award
