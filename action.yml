@@ -26,3 +26,8 @@ runs:
       run: | 
         npm install --fetch-retry-mintimeout=10000 --fetch-retry-maxtimeout=15000 --fetch-retries=1 debug
         node node_modules/@ohos/hvigor/bin/hvigor.js --mode module assembleHap
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
